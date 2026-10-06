@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Core Networking & Firebase Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Android 13+ (API 33+) Financial Alerts Notification Permission -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Bank Transaction SMS Background Parsing -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- Special access permission required by Android to appear in Usage Access Settings -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Package Visibility for UPI, Subscriptions & Indian Broking Apps (Android 11+ / API 30+) -->
+    <queries>
+        <!-- Generic UPI scheme resolver -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="upi" />
+        </intent>
+
+        <!-- Targeted Indian Financial & UPI Payment Apps -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" />  <!-- Google Pay -->
+        <package android:name="com.phonepe.app" />                         <!-- PhonePe -->
+        <package android:name="net.one97.paytm" />                         <!-- Paytm -->
+        <package android:name="com.dreamplug.androidapp" />                <!-- CRED -->
+        <package android:name="in.org.npci.upiapp" />                      <!-- BHIM UPI -->
+        <package android:name="com.whatsapp" />                            <!-- WhatsApp Pay -->
+
+        <!-- Targeted Subscription Apps for Subscription Killer Suite -->
+        <package android:name="com.netflix.mediaclient" />
+        <package android:name="com.spotify.music" />
+        <package android:name="com.amazon.avod.thirdpartyclient" />
+        <package android:name="com.google.android.youtube" />
+        <package android:name="in.startv.hotstar" />
+        <package android:name="in.cure.fit" />
+        <package android:name="com.openai.chatgpt" />
+        <package android:name="com.google.android.apps.subscriptions.red" />
+        <package android:name="com.graymatrix.did" />
+        <package android:name="com.sonyliv" />
+        <package android:name="in.swiggy.android" />
+        <package android:name="com.application.zomato" />
+
+        <!-- Targeted Indian Broker Apps for Trading & Investment Hub -->
+        <package android:name="com.zerodha.kite3" />
+        <package android:name="com.zerodha.coin" />
+        <package android:name="com.nextbillion.groww" />
+        <package android:name="com.msf.angelmobile" />
+        <package android:name="in.upstox.app" />
+        <package android:name="co.dhan" />
+        <package android:name="in.indwealth" />
+        <package android:name="com.fivepaisa.trade" />
+        <package android:name="com.paytmmoney" />
+        <package android:name="com.icicidirect" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+
+        <!-- Root Navigation Activity with Edge-to-Edge & IME Resize Support -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Notification Listener Service for Live UPI & Bank Alert Ingestion -->
+        <service
+            android:name=".notification.WealthWiseNotificationListenerService"
+            android:label="WealthWise Sync Service"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- Incoming Bank SMS Transaction Receiver -->
+        <receiver
+            android:name=".receiver.TransactionSmsReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Razorpay Android Checkout API Key -->
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_1DP5mmOlF5G5ag" />
+
+    </application>
+
+</manifest>

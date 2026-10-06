@@ -1,0 +1,236 @@
+﻿
+app\src\main\java\com\example\data\repository\SubscriptionRepository.kt:164:                        usageDays = 
+(minutes / 60).toInt().coerceAtLeast(1),
+app\src\main\java\com\example\data\repository\WealthWiseRepository.kt:537:                
+IngestionResult.Success(newId, entity.copy(id = newId.toInt()))
+app\src\main\java\com\example\data\repository\WealthWiseRepository.kt:723:            val loan = 
+loanDao.getLoanById(id, uid) ?: loanDao.getLoanById(id.toInt())
+app\src\main\java\com\example\data\repository\WealthWiseRepository.kt:795:            ?: 
+loanDao.getLoanById(loanId.toInt())
+app\src\main\java\com\example\domain\financial\FinancialCalculationEngine.kt:111:                    .toInt()
+app\src\main\java\com\example\domain\financial\FinancialCalculationEngine.kt:362:                
+remaining.divide(monthlyTarget, 0, RoundingMode.CEILING).toInt().coerceAtLeast(1)
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:962:            val pct = if (b.monthlyLimit > 0) 
+((spent / b.monthlyLimit) * 100).toInt() else 0
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:977:        val overallPct = if (totalBudget > 0) 
+((totalSpent / totalBudget) * 100).toInt() else 0
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:1032:                    tooltipDetails = 
+"+₹${txn.amount.toInt()} (${txn.merchant.ifEmpty { "Goal" }})"
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:1100:                    tooltipDetails = "Principal: 
+₹${totalPrincipal.toInt()}"
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:1128:                        tooltipDetails = "Paid: 
+₹${txn.amount.toInt()} | Bal: ₹${currentDebt.toInt()}"
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:1139:                        tooltipDetails = 
+"Outstanding: ₹${totalOutstanding.toInt()}"
+app\src\main\java\com\example\domain\financial\PageAnalytics.kt:1178:                tooltipDetails = 
+"₹${monthlyCost.toInt()}/mo (Billed ₹${sub.amount.toInt()} ${sub.billingPeriod.lowercase()})"
+app\src\main\java\com\example\domain\loan\LoanCalculations.kt:95:        return days.toInt().coerceAtLeast(0)
+app\src\main\java\com\example\domain\subscription\SubscriptionDetector.kt:265:                    intervalDays = 
+daysDiff.toInt(),
+app\src\main\java\com\example\notification\WealthWiseNotificationEvaluator.kt:117:                    val emiKey = 
+WealthWiseNotificationDeduplicator.upcomingEmiKey(loan.id.toInt(), loan.nextDueDate)
+app\src\main\java\com\example\notification\WealthWiseNotificationEvaluator.kt:122:                            
+loan.id.toInt(),
+app\src\main\java\com\example\notification\WealthWiseNotificationEvaluator.kt:192:                    val 
+progressPercent = ((goal.savedAmount / goal.targetAmount) * 100).toInt()
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:94:        val message = "You've used 
+₹${spent.toInt()} of your ₹${limit.toInt()} $category budget."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:103:            
+.setColor(0xFFF59E0B.toInt()) // Amber warning
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:138:        val message = "You've spent 
+₹${spent.toInt()} of your ₹${limit.toInt()} $category budget. Over budget: ₹${overBudget.toInt()}."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:147:            
+.setColor(0xFFEF4444.toInt()) // Danger Red
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:178:        val message = "Your 
+₹${emiAmount.toInt()} EMI for $loanTitle is due tomorrow."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:187:            
+.setColor(0xFF6366F1.toInt()) // Indigo
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:217:        val message = "Your 
+₹${amount.toInt()} bill for $billTitle is due tomorrow."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:226:            
+.setColor(0xFF3B82F6.toInt()) // Blue
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:254:        val pendingIntent = 
+createNavigationPendingIntent(context, "GOALS", 3000 + (goalId % 1000).toInt())
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:256:        val message = "You're 
+currently about ₹${shortfallMonthly.toInt()}/month behind the pace needed to reach your target."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:265:            
+.setColor(0xFF0D9488.toInt()) // Teal
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:271:            
+NotificationManagerCompat.from(context).notify(NOTIF_ID_GOAL_BASE + (goalId % 400).toInt(), notification)
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:302:        val pendingIntent = 
+createNavigationPendingIntent(context, "GOALS", 3500 + (goalId % 1000).toInt())
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:304:        val message = "Your current 
+budget leaves about ₹${availableMonthly.toInt()}/month, while $goalTitle requires about 
+₹${requiredMonthly.toInt()}/month. Shortfall: ₹${shortfall.toInt()}/month."
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:313:            
+.setColor(0xFFF97316.toInt()) // Orange
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:319:            
+NotificationManagerCompat.from(context).notify(NOTIF_ID_GOAL_BASE + (goalId % 400).toInt(), notification)
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:361:            
+.setColor(0xFFEF4444.toInt())
+app\src\main\java\com\example\notification\WealthWiseNotificationManager.kt:392:            
+.setColor(0xFF1E3A8A.toInt())
+app\src\main\java\com\example\permission\PermissionManager.kt:493:                        val days = ((now - lastUsed) 
+/ (1000 * 60 * 60 * 24)).toInt().coerceAtLeast(0)
+app\src\main\java\com\example\ui\budget\BudgetScreen.kt:110:            val percent = if (b.monthlyLimit > 0) ((spent 
+/ b.monthlyLimit) * 100).toInt().coerceAtLeast(0) else 0
+app\src\main\java\com\example\ui\budget\BudgetScreen.kt:142:    val overallPercent = if (totalBudget > 0) ((totalSpent 
+/ totalBudget) * 100).toInt().coerceAtLeast(0) else 0
+app\src\main\java\com\example\ui\budget\BudgetScreen.kt:704:    var limitInput by remember { mutableStateOf(if 
+(initialLimit > 0) initialLimit.toInt().toString() else "") }
+app\src\main\java\com\example\ui\components\AlertBanners.kt:31:    val overrunPercent = if (shoppingLimit > 0.0) 
+((shoppingSpent / shoppingLimit) * 100).toInt() else 0
+app\src\main\java\com\example\ui\components\AlertBanners.kt:131:                    text = "₹${shoppingSpent.toInt()} 
+/ ₹${shoppingLimit.toInt()}",
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:289:                                val idx = 
+((offset.x / stepX) + 0.5f).toInt().coerceIn(0, points.size - 1)
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:298:                            val idx = 
+((change.position.x / stepX) + 0.5f).toInt().coerceIn(0, points.size - 1)
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:629:                            text = if 
+(sel.isOverBudget) "Exceeded by ₹${sel.exceededBy.toInt()}"
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:630:                            else 
+"Remaining: ₹${sel.remaining.toInt()} (${100 - sel.percentUsed}% left)",
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:939:                            val idx = 
+((offset.x / step).toInt()).coerceIn(0, points.size - 1)
+app\src\main\java\com\example\ui\components\charts\WealthWiseCharts.kt:948:                            val idx = 
+((change.position.x / step).toInt()).coerceIn(0, points.size - 1)
+app\src\main\java\com\example\ui\dashboard\DashboardComponents.kt:504:                                text = "Spent 
+₹${shoppingSpent.toInt()} / Limit ₹${shoppingLimit.toInt()}",
+app\src\main\java\com\example\ui\dashboard\DashboardComponents.kt:510:                        val percent = if 
+(shoppingLimit > 0) ((shoppingSpent / shoppingLimit) * 100).toInt() else 100
+app\src\main\java\com\example\ui\dashboard\DashboardComponents.kt:607:                                    text = 
+"Draining ₹${subscription.monthlyCost.toInt()}/month (₹${(subscription.monthlyCost * 12).toInt()}/yr)",
+app\src\main\java\com\example\ui\dashboard\DashboardComponents.kt:826:                    val percentage = (progress * 
+100).toInt()
+app\src\main\java\com\example\ui\dashboard\HomeDashboardScreen.kt:54:    val decimalPart = (roundedTotalPaise % 
+100).toInt()
+app\src\main\java\com\example\ui\dashboard\HomeDashboardScreen.kt:915:    val percentUsed = if (totalBudget > 0) 
+((totalSpent / totalBudget) * 100).toInt() else 0
+app\src\main\java\com\example\ui\dashboard\HomeDashboardScreen.kt:1074:                    ((activeGoal.savedAmount / 
+activeGoal.targetAmount) * 100).toInt().coerceIn(0, 100)
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:295:        budgets.firstOrNull { it.category == 
+selectedCategory }?.monthlyLimit?.toInt()?.toString() ?: "0"
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:318:                        text = "You're changing your 
+$pendingCategory budget from ₹${pendingOldLimit.toInt()} to ₹${pendingNewLimit.toInt()}.",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:323:                        text = "Your total planned 
+budget will be ₹${pendingTotalBudget.toInt()}.",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:328:                        text = "Your available 
+amount is ₹${availableAmount.toInt()}.",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:334:                            text = 
+"₹${(availableAmount - pendingTotalBudget).toInt()} will remain after planned budgets.",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:341:                            text = "⚠️ Warning: Your 
+planned budgets exceed available funds by ₹${(pendingTotalBudget - availableAmount).toInt()}.",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:418:                                limitInput = 
+b.monthlyLimit.toInt().toString()
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1462:                                    text = 
+"₹${requiredMonthly.toInt()}/mo",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1470:                                    "Goal 
+contribution appears affordable based on your current budget. Available after budget: 
+₹${availableMonthly.toInt()}/month. Remaining buffer: ₹${(availableMonthly - requiredMonthly).toInt()}/month."
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1472:                                    "Your current 
+budget leaves ₹${availableMonthly.toInt()}/month. This goal requires ₹${requiredMonthly.toInt()}/month. Shortfall: 
+₹${(requiredMonthly - availableMonthly).toInt()}/month.\nOptions: Reduce planned budget, increase timeline, or proceed 
+with caution."
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1539:    var newBalanceInput by remember { 
+mutableStateOf(currentOpening.toInt().toString()) }
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1902:                                text = 
+"₹${calculatedEmi.toInt()}/mo",
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:1971:    val roundedTarget = 
+(kotlin.math.ceil(monthlyTarget / 100.0) * 100.0).toInt()
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:2275:                            
+Text("₹${total80CInvested.toInt()} / ₹1,50,000", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = EmeraldLight)
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:2291:                                "💡 Invest 
+₹${remaining80CGap.toInt()} more in ELSS, PPF, or Tax-Saver FDs to save up to ₹${(remaining80CGap * 0.312).toInt()} in 
+taxes."
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:2327:                            
+Text("₹${total80CInvested.toInt()}", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = EmeraldLight)
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:2447:                                    
+Text("₹${dup.amount.toInt()}", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = CrimsonRed)
+app\src\main\java\com\example\ui\dialogs\WealthWiseDialogs.kt:2476:                                    
+Text("₹${spk.amount.toInt()}", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = AmberLight)
+app\src\main\java\com\example\ui\goals\GoalsScreen.kt:52:    val overallProgress = if (totalTarget > 0) ((totalSaved / 
+totalTarget) * 100).toInt() else 0
+app\src\main\java\com\example\ui\goals\GoalsScreen.kt:205:                            text = 
+"${goalAnalytics.overallProgressPercent.toInt()}% Saved",
+app\src\main\java\com\example\ui\goals\GoalsScreen.kt:338:                        ((goal.savedAmount / 
+goal.targetAmount) * 100).toInt().coerceIn(0, 100)
+app\src\main\java\com\example\ui\goals\GoalsScreen.kt:466:                                
+(kotlin.math.ceil(remainingGoal / goal.monthlyTarget)).toInt()
+app\src\main\java\com\example\ui\goals\GoalsScreen.kt:505:                                                text = 
+"+₹${amount.toInt()}",
+app\src\main\java\com\example\ui\loans\LoansScreen.kt:444:    val percentRepaid = (item.progress * 100).toInt()
+app\src\main\java\com\example\ui\loans\LoansScreen.kt:1083:    var amountStr by remember { 
+mutableStateOf(loanItem.loan.emiAmount.toInt().toString()) }
+app\src\main\java\com\example\ui\search\UniversalSearchDialog.kt:518:                text = "${((goal.savedAmount / 
+goal.targetAmount.coerceAtLeast(1.0)) * 100).toInt()}%",
+app\src\main\java\com\example\ui\search\UniversalSearchEngine.kt:194:                txn.amount.toInt().toString() == 
+qClean ||
+app\src\main\java\com\example\ui\subscriptions\SubscriptionScreen.kt:524:                    text = "• ${alert.name}: 
+Increased from ₹${alert.oldAmount.toInt()} to ₹${alert.newAmount.toInt()} (+₹${alert.difference.toInt()}) on 
+${alert.detectedDate}",
+app\src\main\java\com\example\ui\subscriptions\SubscriptionScreen.kt:583:                                
+"₹${candidate.amount.toInt()} • ${candidate.billingPeriod.lowercase()}",
+app\src\main\java\com\example\ui\subscriptions\SubscriptionScreen.kt:1069:                            amountStr = 
+suggestion.defaultPrice.toInt().toString()
+app\src\main\java\com\example\ui\viewmodel\BudgetsViewModel.kt:168:                ((spent / cat.budgetLimit) * 
+100).toInt().coerceAtLeast(0)
+app\src\main\java\com\example\ui\viewmodel\HomeViewModel.kt:47:    val percentUsed: Int = if (limit > 0) ((spent / 
+limit) * 100).toInt() else 0,
+app\src\main\java\com\example\ui\viewmodel\HomeViewModel.kt:252:                    ((totalSpent / totalBudget) * 
+100).toInt().coerceIn(0, 100)
+app\src\main\java\com\example\ui\viewmodel\HomeViewModel.kt:495:            val percentUsed = if (categoryLimit > 0) 
+((spent / categoryLimit) * 100).toInt() else 0
+app\src\main\java\com\example\ui\viewmodel\HomeViewModel.kt:517:            val percentageUsed = if (totalBudget > 0) 
+((totalExpenseThisMonth / totalBudget) * 100).toInt() else 0
+app\src\main\java\com\example\ui\viewmodel\SubscriptionViewModel.kt:381:            
+subscriptionRepository.recordCancellation(sub.id.toInt())
+app\src\main\java\com\example\ui\viewmodel\SubscriptionViewModel.kt:396:            
+subscriptionRepository.updateSubscriptionStatus(sub.id.toInt(), "PAUSED")
+app\src\main\java\com\example\ui\viewmodel\SubscriptionViewModel.kt:409:            
+subscriptionRepository.updateSubscriptionStatus(sub.id.toInt(), "ACTIVE")
+app\src\main\java\com\example\ui\viewmodel\SubscriptionViewModel.kt:422:            
+subscriptionRepository.deleteSubscription(subId.toInt())
+app\src\main\java\com\example\ui\viewmodel\SubscriptionViewModel.kt:484:                    subscriptionId = 
+sub.id.toInt(),
+app\src\main\java\com\example\ui\viewmodel\TradingViewModel.kt:101:                        
+((winningTrades.size.toDouble() / closedTrades.size.toDouble()) * 100).toInt()
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:819:                syncTxToFirestore(tx.copy(id = 
+insertedId.toInt()))
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:823:                        message = "Extracted 
+₹${parsed.amount.toInt()} -> $finalCategory (${parsed.paymentMethod})",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:829:                        toastMessage = 
+"Successfully logged ₹${parsed.amount.toInt()} ($txType - $finalCategory)!"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:891:            syncTxToFirestore(tx.copy(id = 
+insertedId.toInt()))
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:896:                    message = "$title: 
+₹${amount.toInt()} ($type) recorded under $category.",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:903:                    toastMessage = "Added $type 
+of ₹${amount.toInt()} under $category"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:934:                    message = 
+"₹${bill.amount.toInt()} paid for ${bill.title}.",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:941:                    toastMessage = "Paid 
+₹${bill.amount.toInt()} for ${bill.title}!"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:958:                    message = "Cancelled 
+${sub.name}. You will save ₹${annualSaving.toInt()} per year!",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:965:                    toastMessage = "Cancelled 
+${sub.name}. Saving ₹${annualSaving.toInt()}/year!"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1059:                    toastMessage = "Added 
+'$name' (₹${amount.toInt()} / ${billingPeriod.lowercase()}) to subscriptions."
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1153:                    toastMessage = "Logged 
+payment of ₹${amount.toInt()} for ${subscription.name} in ledger."
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1228:                    toastMessage = "Updated 
+$category limit to ₹${limit.toInt()}"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1397:                    message = "Added 
+₹${principal.toInt()} liability with ${loan.lender}. EMI is ₹${loan.monthlyEmi.toInt()}/mo.",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1404:                    toastMessage = "Added loan 
+'$title' (Monthly EMI: ₹${loan.monthlyEmi.toInt()})"
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1429:                    message = "Payment of 
+₹${emiToPay.toInt()} recorded for ${loan.title}.",
+app\src\main\java\com\example\ui\viewmodel\WealthWiseViewModel.kt:1434:                it.copy(toastMessage = "Paid 
+₹${emiToPay.toInt()} EMI for ${loan.title}!")
+app\src\main\java\com\wealthwise\app\utils\UpiPaymentHelper.kt:257:            ((projectedSpent / budgetLimit) * 
+100).toInt()
+app\src\main\java\com\wealthwise\app\utils\UpiPaymentHelper.kt:407:        val decimalPart = kotlin.math.round((absVal 
+- integerPart) * 100).toInt()
+
+

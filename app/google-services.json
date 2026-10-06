@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "613969556150",
+    "project_id": "wealthwise-869dd",
+    "storage_bucket": "wealthwise-869dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613969556150:android:58a68c46a3d924832eac17",
+        "android_client_info": {
+          "package_name": "com.example.wealthwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613969556150-f7hmmje92hpjjuhejbu6l5c89evs7f44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6tn-GSXGdMGWVCcwAIGUCi6JHjQPCc7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613969556150-f7hmmje92hpjjuhejbu6l5c89evs7f44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613969556150:android:58a68c46a3d924832eac17",
+        "android_client_info": {
+          "package_name": "com.aistudio.wealthwise.traczk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613969556150-f7hmmje92hpjjuhejbu6l5c89evs7f44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6tn-GSXGdMGWVCcwAIGUCi6JHjQPCc7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613969556150-f7hmmje92hpjjuhejbu6l5c89evs7f44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
